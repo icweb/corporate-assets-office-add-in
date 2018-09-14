@@ -1,0 +1,66 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license. -->
+<!-- See LICENSE in the project root for license information -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Corporate Assets</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.debug.js"></script>
+
+    <!-- LOCAL -->
+    <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
+    <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
+
+    <!-- CDN -->
+    <!-- For the Office UI Fabric, go to http://aka.ms/office-ui-fabric to learn more. -->
+    <!--<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css" />-->
+    <!--<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css" />-->
+
+
+    <!-- Template styles -->
+    <link href="app.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter ms-u-fadeIn500">
+        <h1 class="ms-fontSize-xl ms-fontWeight-light ms-fontColor-neutralPrimary">Corporate Assets</h1>
+        <p class="ms-font-s ms-u-textAlignCenter">Drag an image from below into your document</p>
+    </header>
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl ms-fontWeight-semilight ms-fontColor-neutralPrimary ms-u-slideUpIn20">Please sideload your addin to see app body.</h2>
+    </section>
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <div id="images-container"></div>
+    </main>
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+
+    <script type="text/javascript">
+        const Images = [
+            'https://seeklogo.com/images/A/apple-logo-52C416BDDD-seeklogo.com.png',
+            'https://seeklogo.com/images/A/Apple-logo-4DC2B05F7D-seeklogo.com.png',
+            'https://seeklogo.com/images/A/apple-ipad-logo-C44B3CB6BA-seeklogo.com.png',
+            'https://seeklogo.com/images/A/apple-pay-logo-51FB613CF0-seeklogo.com.png',
+            'https://seeklogo.com/images/A/Apple-logo-08556AB833-seeklogo.com.png',
+        ];
+
+        for(let x = 0; x < Images.length; x++)
+        {
+            let image = new Image();
+            image.src = Images[x];
+            image.className = 'corporate-asset-img';
+            document.getElementById('images-container').appendChild(image);
+        }
+    </script>
+
+
+</body>
+
+</html>
