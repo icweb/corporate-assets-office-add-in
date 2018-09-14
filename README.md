@@ -2,8 +2,6 @@
 
 This project demonstrates distributing your organizations corporate assets (logos, icons, etc.) to your end users from right inside Word.
 
-___
-
 ## Example:
 
 ![Image of Add-in](http://i64.tinypic.com/2h51b3c.png)
